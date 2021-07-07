@@ -1,5 +1,4 @@
 import { useEffect, useState } from 'react';
-import { Button } from '../Button'
 import { Container, Image, Text } from './styles'
 import { OBSServer } from './../../services/obs';
 
@@ -10,7 +9,7 @@ export function Greetings() {
   const [sceneActive, setSceneActive] = useState('');
 
   async function initOBS() {
-    await OBS.init();
+    await OBS.init('localhost:4444', 'alvim');
     OBS.scenes.subscribe(setScenes);
     OBS.currentScene.subscribe(setSceneActive);
   }
@@ -36,8 +35,7 @@ export function Greetings() {
         ))}
       </ul>
 
-      <Text>An Electron boilerplate including TypeScript, React, Jest and ESLint.</Text>
-      <Button>Send message to main process</Button>
+
     </Container>
   )
 }

@@ -16,6 +16,9 @@ function createWindow() {
     width: 1100,
     height: 700,
     backgroundColor: '#191622',
+    // Customize header buttons
+    // frame: false,
+    // transparent: true,
     webPreferences: {
       nodeIntegration: false,
       contextIsolation: true,

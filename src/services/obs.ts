@@ -6,8 +6,8 @@ export class OBSServer {
   currentScene = new BehaviorSubject('');
   scenes = new BehaviorSubject<string[]>([]);
 
-  async init() {
-    await obs.connect({ address: 'localhost:4444', password: 'alvim' });
+  async init(address: string, password?: string) {
+    await obs.connect({ address: address, password: password });
     this.updateScenes();
     obs.on('SwitchScenes', data => {
       this.currentScene.next(data['scene-name']);
