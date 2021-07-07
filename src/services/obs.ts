@@ -1,6 +1,13 @@
 import OBSWebSocket from 'obs-websocket-js';
 import { BehaviorSubject, Subscriber } from 'rxjs';
-const obs = new OBSWebSocket()
+const WebSocket = require('ws');
+const obs = new OBSWebSocket();
+
+
+const ws = new WebSocket('http://localhost:8080');
+ws.on("message", () => {
+  console.log('recebendo data do Server')
+});
 
 export class OBSServer {
   currentScene = new BehaviorSubject('');

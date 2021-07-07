@@ -3,12 +3,6 @@ import { useEffect, useState } from 'react';
 import { Container, Image, Text } from './styles'
 import { OBSServer } from './../../services/obs';
 
-const WebSocket = require('ws');
-const ws = new WebSocket('http://localhost:8080');
-ws.on("message", () => {
-  console.log('recebendo data do Server')
-});
-
 const OBS = new OBSServer();
 
 export function Greetings() {
