@@ -1,15 +1,20 @@
 import { ChakraProvider } from '@chakra-ui/react';
 
-import { Greetings } from './components/Greetings'
+import OBSContext from './contexts/OBSContext';
 import Home from './Screens/Home';
+import Graphql from './services/Graphql';
 import { theme } from './styles/theme';
 
 export function App() {
   return (
     <>
-      <ChakraProvider theme={theme}>
-        <Home />
-      </ChakraProvider>
+      <OBSContext>
+        <ChakraProvider theme={theme}>
+          <Graphql>
+            <Home />
+          </Graphql>
+        </ChakraProvider>
+      </OBSContext>
     </>
   )
 }
