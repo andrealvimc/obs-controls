@@ -1,6 +1,7 @@
 {
   "name": "obs-controls",
   "author": "André Alvim",
+  "description": "OBS",
   "version": "2.0.0",
   "main": "./.webpack/main/index.js",
   "scripts": {
@@ -73,9 +74,9 @@
   "config": {
     "forge": {
       "packagerConfig": {
-        "name": "OBS Controls",
+        "name": "obs-controls",
         "executableName": "obs-controls",
-        "icon": "assets/icon",
+        "icon": "assets/favicon.ico",
         "extraResource": [
           "assets"
         ]

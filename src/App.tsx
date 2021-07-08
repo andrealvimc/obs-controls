@@ -8,13 +8,14 @@ import { theme } from './styles/theme';
 export function App() {
   return (
     <>
-      <OBSContext>
-        <ChakraProvider theme={theme}>
+
+      <ChakraProvider theme={theme}>
+        <OBSContext>
           <Graphql>
             <Home />
           </Graphql>
-        </ChakraProvider>
-      </OBSContext>
+        </OBSContext>
+      </ChakraProvider>
     </>
   )
 }

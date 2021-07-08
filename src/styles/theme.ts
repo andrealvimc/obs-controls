@@ -6,6 +6,7 @@ export const theme = extendTheme({
       body: {
         bg: "gray.800",
         color: "white",
+        "user-select": 'none'
       },
     },
   },

@@ -1,6 +1,6 @@
 import { createContext, ReactNode, useState, useEffect, useContext } from "react";
 import { OBSServer } from './../services/obs';
-import { Flex, Spinner } from '@chakra-ui/react';
+import { Flex, Spinner, Button, Heading } from '@chakra-ui/react';
 
 type Props = {
   children: ReactNode
@@ -37,8 +37,10 @@ export default ({ children }: Props) => {
 
   if (loading) {
     return (
-      <Flex h="100%" w="100%" justifyContent="center" alignItems="center">
-        <Spinner size="lg" />
+      <Flex flexDir="column" h="100vh" w="100vw" justifyContent="center" alignItems="center">
+        <Heading as="h4" mb="7">Reinicie o OBS</Heading>
+        <Spinner size="lg" my="5" color="white" />
+        <Button bg="gray.600" _hover={{ bg: "gray.500" }} mt="4" onClick={initOBS} cursor="pointer" my="2">Reconectar</Button>
       </Flex>
     )
   }
